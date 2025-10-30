@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schééra Company | Beauty born from light</title>
+  <style>
+    /* === STYLE GLOBAL === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fff5f7;
+      color: #5c4b4b;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      color: #b87e97;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5c4b4b;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #d89cb0;
+    }
+
+    section {
+      padding: 100px 10%;
+      text-align: center;
+    }
+
+    h1 {
+      color: #b87e97;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #6f5b5b;
+    }
+
+    .btn {
+      background: #e2b7c8;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 25px;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #b87e97;
+    }
+
+    footer {
+      background: #f9e9ee;
+      text-align: center;
+      padding: 25px;
+      color: #8a6a76;
+      font-size: 0.95rem;
+      margin-top: 80px;
+    }
+
+    /* === PAGE D’INTRO === */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #fce7ee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      animation: fadeOut 3s forwards ease 2s;
+    }
+
+    .intro-logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      animation: zoomIn 2s ease;
+    }
+
+    .intro-slogan {
+      font-size: 1.5rem;
+      color: #b87e97;
+      margin-top: 15px;
+      font-style: italic;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* === SECTIONS === */
+    .hero {
+      background: linear-gradient(to right, #fbe9f1, #fff5f7);
+      padding: 150px 10%;
+      text-align: center;
+      border-radius: 0 0 50px 50px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: #b87e97;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 20px auto;
+      color: #6f5b5b;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .service {
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #e6c9d4;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    button {
+      background: #e2b7c8;
+      border: none;
+      padding: 12px;
+      border-radius: 30px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #b87e97;
+    }
+  </style>
+</head>
+<body>
+  <!-- INTRO -->
+  <div id="intro">
+    <img src="images/logo.png" alt="Schééra Logo" class="intro-logo" />
+    <h1 class="intro-slogan">Beauty born from light</h1>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <h2 class="logo">Schééra Company</h2>
+      <ul>
+        <li><a href="#accueil" class="active">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ACCUEIL -->
+  <section id="accueil" class="hero">
+    <h1>Bienvenue chez Schééra Company</h1>
+    <p>Où la lumière et la nature donnent naissance à la beauté.</p>
+    <a href="#apropos" class="btn">Découvrir</a>
+  </section>
+ <section class="poem-section">
+    <div class="poem-container">
+      <h2>Beauty Born from Light</h2>
+      <p>
+        <!-- 🌸 Section Poèmes : Beauty born from light -->
+<section id="poeme" style="background-color:#fff0f5; padding:80px 20px; text-align:center; overflow:hidden;">
+  <h2 style="color:#d87093; font-family:'Playfair Display', serif; font-size:34px; margin-bottom:50px; animation: fadeIn 2s ease;">
+    Beauty born from light
+  </h2>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; animation: fadeInUp 2.5s ease;">
+    <!-- Poème en anglais -->
+    <div style="flex:1 1 400px; max-width:500px; background:white; padding:30px; border-radius:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-family:'Georgia', serif; color:#555; line-height:1.8;">
+      <h3 style="color:#d87093; font-family:'Playfair Display', serif; font-size:22px; margin-bottom:20px;">Beauty born from light</h3>
+      <p>At dawn’s first breath, the earth awakes,<br>
+      A golden ray through silence breaks.<br>
+      It kisses leaves with tender grace,<br>
+      And beauty blooms in nature’s face.</p>
+
+      <p>It is no paint, nor fleeting glow,<br>
+      But gentle light from roots below —<br>
+      From heart and soul, from truth made pure,<br>
+      From love that stands, serene and sure.</p>
+
+      <p>“Beauty born from light,” the breeze will say,<br>
+      When night gives in to break of day.<br>
+      It is not seen — it is <em>divine</em>,<br>
+      The touch of heaven, soft, benign.</p>
+    </div>
+
+    <!-- Poème en français -->
+    <div style="flex:1 1 400px; max-width:500px; background:white; padding:30px; border-radius:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-family:'Georgia', serif; color:#555; line-height:1.8;">
+      <h3 style="color:#d87093; font-family:'Playfair Display', serif; font-size:22px; margin-bottom:20px;">La beauté nee de la lumière</h3>
+      <p>Au souffle pur du premier jour,<br>
+      La terre s’éveille, baignée d’amour.<br>
+      Un rayon d’or fend le silence,<br>
+      Et la beauté prend sa naissance.</p>
+
+      <p>Ce n’est ni fard, ni simple éclat,<br>
+      Mais la clarté qui vient de là —<br>
+      Du cœur sincère, de l’âme claire,<br>
+      Où vit la foi, douce et légère.</p>
+
+      <p>« Beauté née de la lumière »,<br>
+      Murmure le vent dans la poussière.<br>
+      Ce n’est pas vu — c’est le divin,<br>
+      Le souffle du ciel sur le chemin.</p>
+    </div>
+  </div>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive pour petits écrans */
+    @media(max-width: 768px) {
+      #poeme div {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</section>
+
+      </p>
+    </div>
+  </section>
+  <!-- A PROPOS -->
+  <section id="apropos">
+    <h1>À propos</h1>
+    <p>
+       
+<!-- 🌸 Section À propos -->
+<section id="about" style="background-color:#fff; padding:80px 20px; text-align:center;">
+  <h2 style="color:#d87093; font-family:'Playfair Display', serif; font-size:34px; margin-bottom:30px; animation: fadeIn 2s ease;">
+    À propos de Schééra Company
+  </h2>
+
+  <div style="max-width:900px; margin:0 auto; color:#555; font-size:18px; line-height:1.9; font-family:'Georgia', serif; text-align:justify; background:#fffafc; padding:40px; border-radius:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08); animation: fadeInUp 2.5s ease;">
+    <p><strong>Schééra Company</strong> est plus qu’une entreprise : c’est une vision née d’une lumière intérieure.
+    Fondée par <strong>Kéren Kabunga</strong>, elle s’inspire de Schééra, cette bâtisseuse biblique qui osa ériger des cités dans un monde d’hommes.</p>
+
+    <p>Ici, chaque fleur devient message, chaque parfum une prière, chaque produit une offrande à la beauté véritable — celle qui naît de la lumière et non du paraître.</p>
+
+    <p>Nous croyons que la nature porte les empreintes de Dieu et qu’en la respectant, nous révélons la grâce cachée dans toute création.
+    Nos huiles, nos essences et nos roses racontent cette alliance entre la foi, la terre et la féminité.</p>
+
+    <p><strong>Schééra Company</strong>, c’est l’audace de croire qu’un parfum peut élever l’âme,
+    qu’une goutte d’huile peut bénir la peau,
+    et qu’une femme éclairée par la lumière divine peut illuminer le monde.</p>
+  </div>
+
+  <style>
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</section>
+
+    </p>
+    <p>
+      <em>Notre mission est simple : révéler la lumière et la pureté de la nature à travers chaque pétale.</em>
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h1>Nos Services</h1>
+    <div class="service-list">
+      <div class="service">
+        <h3>🌹 Production de Roses</h3>
+        <p>Nous cultivons des roses raffinées dans notre jardin, avec passion et soin.</p>
+      </div>
+      <div class="service">
+        <h3>🚚 Exportation de Roses</h3>
+        <p>Nos roses sont exportées vers les plus grandes maisons florales internationales.</p>
+      </div>
+      <div class="service">
+        <h3>🌿 Production d’Huiles Naturelles</h3>
+        <p>Des huiles pures et florales pour la peau et les cheveux, créées à partir de nos fleurs les plus fines.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="galerie">
+    <h1>Galerie</h1>
+    <div class="gallery-grid">
+      <img src="images/fleur.jpg" alt="Rose 1">
+      <img src="images/fleur1.jpg" alt="Rose 2">
+      <img src="images/fleur2.jpg" alt="Rose 3">
+      <img src="images/fleur3.png" alt="Huile naturelle">
+      <img src="images/fleur4.png" alt="Schééra Garden">
+      <img src="images/fleur5.png" alt="Exportation de roses">
+      <img src="images/fleur6.jpg" alt="Rose pure">
+      <img src="Images/fleur7.jpg" alt="rose blanche">
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h1>Contactez-nous</h1>
+    <form>
+      <input type="text" placeholder="Votre nom" required>
+      <input type="email" placeholder="Votre e-mail" required>
+      <textarea placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+      <section class="contact">
+  <h2>Contactez-nous</h2>
+  <p>Nous serons ravis d’échanger avec vous 💐</p>
+
+  <div class="contact-info">
+    <p><strong> WhatsApp :</strong> <a href="https://wa.me/+243977450223" target="_blank">+243977450223</a></p>
+    <p><strong> Telephone:</strong><a href="tel:+250795467374">+250795467374</a></p></p>
+    <p><strong>Email :</strong> <a href="mailto:@Kerenkabunga7@gmail.com">@Kerenkabunga7@gmail.com</a></p>
+    <p><strong>Instagram :</strong> <a href="https://instagram.com/Scheera___" target="_blank">@Scheera___</a></p>
+    <p>Disponible du lundi au samedi de 8h à 18h 🌸</p>
+  </div>
+</section>
+
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Schééra Company — Beauty born from light</p>
+  </footer>
+
+  <script>
+    // Animation d’intro
+    setTimeout(() => {
+      document.getElementById('intro').style.display = 'none';
+    }, 4000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* Fichier : style.css */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #fff6f8;
+  color: #444;
+}
+
+header {
+  background-color: #ffe6ee;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+h1 {
+  color: #c04a77;
+  font-size: 2.8em;
+  letter-spacing: 2px;
+}
+
+h2 {
+  color: #d66b93;
+}
+
+section {
+  padding: 60px 10%;
+}
+
+footer {
+  background-color: #ffe6ee;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+button {
+  background-color: #d66b93;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #c04a77;
+}
