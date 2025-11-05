@@ -319,19 +319,22 @@
   <!-- CONTACT -->
   <section id="contact">
   <h1>Contactez-nous</h1>
- <form action="https://wa.me/243977450223?text=Bonjour%20Sheera%20Company%2C%20je%20souhaite%20plus%20d'informations" method="get" target="_blank">
-    <input type="text" name="name" placeholder="Nom" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="text" placeholder="Votre message" required></textarea>
-    <button type="submit">Envoyer sur WhatsApp</button>
-  </form>
-    <div class="contact-info" style="margin-top:40px;">
-      <p><strong>WhatsApp :</strong> <a href="https://wa.me/243977450223" target="_blank">+243977450223</a></p>
-      <p><strong>Téléphone :</strong> <a href="tel:250795467374">+250795467374</a></p>
-      <p><strong>Email :</strong> <a href="mailto:Kerenkabunga7@gmail.com">Kerenkabunga7@gmail.com</a></p>
-      <p><strong>Instagram :</strong> <a href="https://www.instagram.com/scheera__?igsh=bXIza280c3Q1dno4&utm_source=qr" target="_blank">Instagram</a></p>
-      <p>Disponible du lundi au samedi de 8h à 18h 🌸</p>
-    </div>
+ <form id="contactForm">
+  <input type="text" id="name" placeholder="Votre nom" required>
+  <input type="email" id="email" placeholder="Votre e-mail" required>
+  <textarea id="message" placeholder="Votre message" required></textarea>
+  <button type="button" id="sendWhatsApp">Envoyer sur WhatsApp</button>
+</form>
+
+<div class="contact-info" style="margin-top:40px;">
+  <p><strong>WhatsApp :</strong> <a href="https://wa.me/243977450223" target="_blank">+243977450223</a></p>
+  <p><strong>Téléphone :</strong> <a href="tel:+250795467374">+250795467374</a></p>
+  <p><strong>Email :</strong> <a href="mailto:Kerenkabunga7@gmail.com">Kerenkabunga7@gmail.com</a></p>
+  <p><strong>Instagram :</strong> 
+    <a href="https://www.instagram.com/scheera__?igsh=bXIza280c3Q1dno4&utm_source=qr" target="_blank">Instagram</a>
+  </p>
+  <p>Disponible du lundi au samedi de 8h à 18h 🌸</p>
+</div>
   </section>
 
   <footer>
@@ -348,6 +351,7 @@
   </script>
 </body>
 </html>
+
 
 
 
