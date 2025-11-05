@@ -349,8 +349,28 @@
       }, 4000);
     });
   </script>
+  <script>
+  document.getElementById('sendWhatsApp').addEventListener('click', function() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (name === "" || email === "" || message === "") {
+      alert("Veuillez remplir tous les champs avant d'envoyer 🌸");
+      return;
+    }
+
+    const text = `👋 Bonjour Schééra Company,%0A%0AJe suis *${name}* (%20${email})%0A%0A${message}`;
+    const phone = "243977450223"; // numéro WhatsApp de Keren
+    const url = `https://wa.me/${phone}?text=${text}`;
+
+    window.open(url, "_blank");
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
